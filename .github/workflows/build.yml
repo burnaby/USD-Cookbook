@@ -45,6 +45,6 @@ jobs:
 
       - name: Now build everything
         run: |
-          cmake3 ..
+          cmake ..
           make          
         working-directory: build
