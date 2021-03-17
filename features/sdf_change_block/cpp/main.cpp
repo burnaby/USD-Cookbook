@@ -1,3 +1,6 @@
+// IMPORT STANDARD LIBRARIES
+#include <iostream>
+
 // IMPORT THIRD-PARTY LIBRARIES
 #include <pxr/usd/sdf/changeBlock.h>
 #include <pxr/usd/sdf/layer.h>

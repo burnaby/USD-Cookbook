@@ -1,3 +1,6 @@
+// IMPORT STANDARD LIBRARIES
+#include <iostream>
+
 // IMPORT THIRD-PARTY LIBRARIES
 #include <pxr/usd/usd/clipsAPI.h>
 #include <pxr/usd/usd/stage.h>

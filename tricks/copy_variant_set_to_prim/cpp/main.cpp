@@ -1,3 +1,6 @@
+// IMPORT STANDARD LIBRARIES
+#include <iostream>
+
 // IMPORT THIRD-PARTY LIBRARIES
 #include <pxr/usd/sdf/copyUtils.h>
 #include <pxr/usd/sdf/layer.h>

@@ -1,3 +1,6 @@
+// IMPORT STANDARD LIBRARIES
+#include <iostream>
+
 // IMPORT THIRD-PARTY LIBRARIES
 #include <pxr/base/tf/token.h>
 #include <pxr/usd/sdf/path.h>

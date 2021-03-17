@@ -5,6 +5,7 @@
 #endif
 
 // IMPORT STANDARD LIBRARIES
+#include <iostream>
 #include <string>
 
 // IMPORT THIRD-PARTY LIBRARIES
