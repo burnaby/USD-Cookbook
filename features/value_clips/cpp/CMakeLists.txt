@@ -1,0 +1,2 @@
+add_subdirectory(explicit)
+add_subdirectory(template_and_explicit)

@@ -1,0 +1,2 @@
+add_subdirectory(plugin_metadata)
+add_subdirectory(variant_fallbacks)
