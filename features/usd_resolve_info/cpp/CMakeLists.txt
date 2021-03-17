@@ -20,18 +20,22 @@ find_library(USD_USD usd HINTS ${USD_LIBRARY_DIRECTORY})
 find_package(PythonLibs REQUIRED)
 
 # 4. Include/Link Everything
-add_executable(run_it
+add_executable(usd_resolve_info_executable
     main.cpp
 )
 
-target_include_directories(run_it
+set_target_properties(usd_resolve_info_executable
+	PROPERTIES OUTPUT_NAME "run_it"
+)
+
+target_include_directories(usd_resolve_info_executable
 PUBLIC
     ${PYTHON_INCLUDE_PATH}
     ${USD_INCLUDE_DIRECTORY}
 )
 
 target_link_libraries(
-run_it
+usd_resolve_info_executable
     ${PYTHON_LIBRARY}
     ${USD_BOOST_PYTHON}
     ${USD_SDF}

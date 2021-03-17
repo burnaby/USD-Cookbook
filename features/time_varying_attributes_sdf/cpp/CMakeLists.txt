@@ -22,18 +22,22 @@ find_library(USD_VT usd HINTS ${USD_LIBRARY_DIRECTORY})
 find_package(PythonLibs REQUIRED)
 
 # 4. Include/Link Everything
-add_executable(run_it
+add_executable(time_varying_attributes_sdf_executable
 	main.cpp
 )
 
-target_include_directories(run_it
+set_target_properties(time_varying_attributes_sdf_executable
+	PROPERTIES OUTPUT_NAME "run_it"
+)
+
+target_include_directories(time_varying_attributes_sdf_executable
 PUBLIC
 	${PYTHON_INCLUDE_PATH}
 	${USD_INCLUDE_DIRECTORY}
 )
 
 target_link_libraries(
-run_it
+time_varying_attributes_sdf_executable
 	${PYTHON_LIBRARY}
     ${USD_ARCH}
     ${USD_BOOST_PYTHON}

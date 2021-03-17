@@ -23,18 +23,22 @@ find_library(USD_VT vt HINTS ${USD_LIBRARY_DIRECTORY})
 find_package(PythonLibs REQUIRED)
 
 # 4. Include/Link Everything
-add_executable(run_it
+add_executable(explicit_value_clips_executable
 	main.cpp
 )
 
-target_include_directories(run_it
+set_target_properties(explicit_value_clips_executable
+	PROPERTIES OUTPUT_NAME "run_it"
+)
+
+target_include_directories(explicit_value_clips_executable
 PUBLIC
 	${PYTHON_INCLUDE_PATH}
 	${USD_INCLUDE_DIRECTORY}
 )
 
 target_link_libraries(
-run_it
+explicit_value_clips_executable
 	${PYTHON_LIBRARY}
     ${USD_BOOST_PYTHON}
     ${USD_SDF}

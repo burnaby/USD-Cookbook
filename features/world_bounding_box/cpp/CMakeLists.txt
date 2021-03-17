@@ -25,18 +25,22 @@ find_library(USD_WORK work HINTS ${USD_LIBRARY_DIRECTORY})
 find_package(PythonLibs REQUIRED)
 
 # 4. Include/Link Everything
-add_executable(run_it
+add_executable(world_bounding_box_executable
     main.cpp
 )
 
-target_include_directories(run_it
+set_target_properties(world_bounding_box_executable
+	PROPERTIES OUTPUT_NAME "run_it"
+)
+
+target_include_directories(world_bounding_box_executable
 PUBLIC
     ${PYTHON_INCLUDE_PATH}
     ${USD_INCLUDE_DIRECTORY}
 )
 
 target_link_libraries(
-run_it
+world_bounding_box_executable
 	${PYTHON_LIBRARY}
     ${USD_BOOST_PYTHON}
     ${USD_GF}

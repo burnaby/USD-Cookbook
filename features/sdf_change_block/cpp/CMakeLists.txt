@@ -23,18 +23,22 @@ find_library(USD_USDGEOM usdGeom HINTS ${USD_LIBRARY_DIRECTORY})
 find_package(PythonLibs REQUIRED)
 
 # 4. Include/Link Everything
-add_executable(run_it
+add_executable(sdf_change_block_executable
 	main.cpp
 )
 
-target_include_directories(run_it
+set_target_properties(sdf_change_block_executable
+	PROPERTIES OUTPUT_NAME "run_it"
+)
+
+target_include_directories(sdf_change_block_executable
 PUBLIC
 	${PYTHON_INCLUDE_PATH}
 	${USD_INCLUDE_DIRECTORY}
 )
 
 target_link_libraries(
-run_it
+sdf_change_block_executable
 	${PYTHON_LIBRARY}
     ${USD_ARCH}
     ${USD_BOOST_PYTHON}

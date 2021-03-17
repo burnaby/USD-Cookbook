@@ -1,6 +1,6 @@
 # 1. Requirements
 cmake_minimum_required(VERSION 2.8.11)
-project(relationship_forwarding)
+project(destination_forwarding)
 
 set(CMAKE_CXX_STANDARD 14)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
@@ -22,18 +22,22 @@ find_library(USD_USDGEOM usdGeom HINTS ${USD_LIBRARY_DIRECTORY})
 find_package(PythonLibs REQUIRED)
 
 # 4. Include/Link Everything
-add_executable(run_it
+add_executable(destination_forwarding_executable
 	main.cpp
 )
 
-target_include_directories(run_it
+set_target_properties(destination_forwarding_executable
+	PROPERTIES OUTPUT_NAME "run_it"
+)
+
+target_include_directories(destination_forwarding_executable
 PUBLIC
 	${PYTHON_INCLUDE_PATH}
 	${USD_INCLUDE_DIRECTORY}
 )
 
 target_link_libraries(
-run_it
+destination_forwarding_executable
 	${PYTHON_LIBRARY}
     ${USD_BOOST_PYTHON}
     ${USD_SDF}
