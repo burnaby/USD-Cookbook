@@ -1,0 +1,50 @@
+# This 
+name: CI
+
+
+on:
+  pull_request:
+    branches:
+      - master
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+    inputs:
+      tags:
+        description: 'Test scenario tags'
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "build"
+  build:
+    # The type of runner that the job will run on
+    runs-on: hbaldzuhn/docker-usd
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v2
+
+
+  # ASWF docker images based build
+  aswf-build:
+    strategy:
+      matrix:
+        vfx:
+          - 2020
+          - 2021
+    runs-on: ubuntu-18.04
+    container:
+        image: aswf/ci-vfxall:${{ matrix.vfx }}
+    steps:
+      - uses: actions/checkout@v2
+      - name: Make the build folder
+        run: |
+          echo "Now building with tags: ${{ github.event.inputs.tags }}" 
+          mkdir build
+
+      - name: Now build everything
+        run: |
+          cmake3 ..
+          make          
+        working-directory: build
