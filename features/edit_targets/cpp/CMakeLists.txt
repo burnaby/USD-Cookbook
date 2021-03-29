@@ -14,7 +14,10 @@ set(USD_LIBRARY_DIRECTORY $ENV{USD_INSTALL_ROOT}/lib)
 set(USD_INCLUDE_DIRECTORY $ENV{USD_INSTALL_ROOT}/include)
 
 find_package(PythonLibs REQUIRED)
-find_library(USD_BOOST_PYTHON boost_python HINTS ${USD_LIBRARY_DIRECTORY})
+find_library(USD_BOOST_PYTHON
+    boost_python NAMES boost_python36
+    HINTS ${USD_LIBRARY_DIRECTORY}
+)
 find_library(USD_GEOM usdGeom HINTS ${USD_LIBRARY_DIRECTORY})
 find_library(USD_SDF sdf HINTS ${USD_LIBRARY_DIRECTORY})
 find_library(USD_TF tf HINTS ${USD_LIBRARY_DIRECTORY})
