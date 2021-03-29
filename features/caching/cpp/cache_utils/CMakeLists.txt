@@ -29,20 +29,20 @@ find_package(PythonLibs REQUIRED)
 
 # 4. Include/Link Everything
 add_executable(cache_utils_executable
-	main.cpp
+    main.cpp
 )
 
 set_target_properties(cache_utils_executable PROPERTIES OUTPUT_NAME "run_it")
 
 target_include_directories(cache_utils_executable
 PUBLIC
-	${PYTHON_INCLUDE_PATH}
-	${USD_INCLUDE_DIRECTORY}
+    ${PYTHON_INCLUDE_PATH}
+    ${USD_INCLUDE_DIRECTORY}
 )
 
 target_link_libraries(
 cache_utils_executable
-	${PYTHON_LIBRARY}
+    ${PYTHON_LIBRARY}
     ${USD_ARCH}
     ${USD_BOOST_PYTHON}
     ${USD_SDF}

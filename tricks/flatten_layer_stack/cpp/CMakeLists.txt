@@ -28,7 +28,7 @@ find_package(PythonLibs REQUIRED)
 
 # 4. Include/Link Everything
 add_executable(flatten_layer_stack_executable
-	main.cpp
+    main.cpp
 )
 
 set_target_properties(flatten_layer_stack_executable
@@ -37,18 +37,18 @@ set_target_properties(flatten_layer_stack_executable
 
 target_include_directories(flatten_layer_stack_executable
 PUBLIC
-	${PYTHON_INCLUDE_PATH}
-	${USD_INCLUDE_DIRECTORY}
+    ${PYTHON_INCLUDE_PATH}
+    ${USD_INCLUDE_DIRECTORY}
 )
 
 target_link_libraries(
 flatten_layer_stack_executable
-	${PYTHON_LIBRARY}
-	${USD_BOOST_PYTHON}
+    ${PYTHON_LIBRARY}
+    ${USD_BOOST_PYTHON}
     ${USD_KIND}
-	${USD_SDF}
-	${USD_TF}
-	${USD_USD}
-	${USD_USDGEOM}
-	${USD_USDUTILS}
+    ${USD_SDF}
+    ${USD_TF}
+    ${USD_USD}
+    ${USD_USDGEOM}
+    ${USD_USDUTILS}
 )

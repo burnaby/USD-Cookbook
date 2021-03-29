@@ -33,7 +33,7 @@ add_executable(world_bounding_box_executable
 )
 
 set_target_properties(world_bounding_box_executable
-	PROPERTIES OUTPUT_NAME "run_it"
+    PROPERTIES OUTPUT_NAME "run_it"
 )
 
 target_include_directories(world_bounding_box_executable
@@ -44,7 +44,7 @@ PUBLIC
 
 target_link_libraries(
 world_bounding_box_executable
-	${PYTHON_LIBRARY}
+    ${PYTHON_LIBRARY}
     ${USD_BOOST_PYTHON}
     ${USD_GF}
     ${USD_SDF}

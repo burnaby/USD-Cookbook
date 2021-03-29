@@ -28,7 +28,7 @@ add_executable(usd_resolve_info_executable
 )
 
 set_target_properties(usd_resolve_info_executable
-	PROPERTIES OUTPUT_NAME "run_it"
+    PROPERTIES OUTPUT_NAME "run_it"
 )
 
 target_include_directories(usd_resolve_info_executable

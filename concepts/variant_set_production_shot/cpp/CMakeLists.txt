@@ -28,25 +28,25 @@ find_package(PythonLibs REQUIRED)
 
 # 4. Include/Link Everything
 add_executable(variant_set_production_shot_executable
-	main.cpp
+    main.cpp
 )
 
 set_target_properties(variant_set_production_shot_executable PROPERTIES OUTPUT_NAME "run_it")
 
 target_include_directories(variant_set_production_shot_executable
 PUBLIC
-	${PYTHON_INCLUDE_PATH}
-	${USD_INCLUDE_DIRECTORY}
+    ${PYTHON_INCLUDE_PATH}
+    ${USD_INCLUDE_DIRECTORY}
 )
 
 target_link_libraries(
 variant_set_production_shot_executable
-	${PYTHON_LIBRARY}
-	${USD_BOOST_PYTHON}
-	${USD_GF}
-	${USD_SDF}
-	${USD_TF}
-	${USD_USDGEOM}
-	${USD_USD}
-	${USD_VT}
+    ${PYTHON_LIBRARY}
+    ${USD_BOOST_PYTHON}
+    ${USD_GF}
+    ${USD_SDF}
+    ${USD_TF}
+    ${USD_USDGEOM}
+    ${USD_USD}
+    ${USD_VT}
 )

@@ -26,7 +26,7 @@ find_package(PythonLibs REQUIRED)
 
 # 4. Include/Link Everything
 add_executable(multi_payload_executable
-	main.cpp
+    main.cpp
 )
 
 set_target_properties(multi_payload_executable
@@ -35,13 +35,13 @@ set_target_properties(multi_payload_executable
 
 target_include_directories(multi_payload_executable
 PUBLIC
-	${PYTHON_INCLUDE_PATH}
-	${USD_INCLUDE_DIRECTORY}
+    ${PYTHON_INCLUDE_PATH}
+    ${USD_INCLUDE_DIRECTORY}
 )
 
 target_link_libraries(
 multi_payload_executable
-	${PYTHON_LIBRARY}
+    ${PYTHON_LIBRARY}
     ${USD_BOOST_PYTHON}
     ${USD_SDF}
     ${USD_TF}

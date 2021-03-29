@@ -30,7 +30,7 @@ add_executable(value_caching_executable
 )
 
 set_target_properties(value_caching_executable
-	PROPERTIES OUTPUT_NAME "run_it"
+    PROPERTIES OUTPUT_NAME "run_it"
 )
 
 target_include_directories(value_caching_executable
@@ -46,6 +46,6 @@ value_caching_executable
     ${USD_SDF}
     ${USD_TF}
     ${USD_USD}
-	${USD_USDGEOM}
+    ${USD_USDGEOM}
     ${USD_VT}
 )

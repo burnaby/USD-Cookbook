@@ -27,20 +27,20 @@ find_package(PythonLibs REQUIRED)
 
 # 4. Include/Link Everything
 add_executable(asset_info_executable
-	main.cpp
+    main.cpp
 )
 
 set_target_properties(asset_info_executable PROPERTIES OUTPUT_NAME "run_it")
 
 target_include_directories(asset_info_executable
 PUBLIC
-	${PYTHON_INCLUDE_PATH}
-	${USD_INCLUDE_DIRECTORY}
+    ${PYTHON_INCLUDE_PATH}
+    ${USD_INCLUDE_DIRECTORY}
 )
 
 target_link_libraries(
 asset_info_executable
-	${PYTHON_LIBRARY}
+    ${PYTHON_LIBRARY}
     ${USD_BOOST_PYTHON}
     ${USD_SDF}
     ${USD_TF}

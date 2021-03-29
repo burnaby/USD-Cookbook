@@ -30,20 +30,20 @@ find_package(PythonLibs REQUIRED)
 
 # 4. Include/Link Everything
 add_executable(mesh_with_materials_executable
-	main.cpp
+    main.cpp
 )
 
 set_target_properties(mesh_with_materials_executable PROPERTIES OUTPUT_NAME "run_it")
 
 target_include_directories(mesh_with_materials_executable
 PUBLIC
-	${PYTHON_INCLUDE_PATH}
-	${USD_INCLUDE_DIRECTORY}
+    ${PYTHON_INCLUDE_PATH}
+    ${USD_INCLUDE_DIRECTORY}
 )
 
 target_link_libraries(
 mesh_with_materials_executable
-	${PYTHON_LIBRARY}
+    ${PYTHON_LIBRARY}
     ${USD_BOOST_PYTHON}
     ${USD_GF}
     ${USD_KIND}

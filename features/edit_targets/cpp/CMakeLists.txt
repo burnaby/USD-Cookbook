@@ -29,7 +29,7 @@ add_executable(edit_targets_executable
 )
 
 set_target_properties(edit_targets_executable
-	PROPERTIES OUTPUT_NAME "run_it"
+    PROPERTIES OUTPUT_NAME "run_it"
 )
 
 target_include_directories(edit_targets_executable

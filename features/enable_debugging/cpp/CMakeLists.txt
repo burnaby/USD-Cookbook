@@ -30,7 +30,7 @@ add_executable(enable_debugging_executable
 )
 
 set_target_properties(enable_debugging_executable
-	PROPERTIES OUTPUT_NAME "run_it"
+    PROPERTIES OUTPUT_NAME "run_it"
 )
 
 target_include_directories(enable_debugging_executable

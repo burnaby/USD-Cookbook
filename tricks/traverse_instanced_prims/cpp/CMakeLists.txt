@@ -28,7 +28,7 @@ find_package(PythonLibs REQUIRED)
 
 # 4. Include/Link Everything
 add_executable(traverse_instanced_prims_executable
-	main.cpp
+    main.cpp
 )
 
 set_target_properties(traverse_instanced_prims_executable
@@ -37,13 +37,13 @@ set_target_properties(traverse_instanced_prims_executable
 
 target_include_directories(traverse_instanced_prims_executable
 PUBLIC
-	${PYTHON_INCLUDE_PATH}
-	${USD_INCLUDE_DIRECTORY}
+    ${PYTHON_INCLUDE_PATH}
+    ${USD_INCLUDE_DIRECTORY}
 )
 
 target_link_libraries(
 traverse_instanced_prims_executable
-	${PYTHON_LIBRARY}
+    ${PYTHON_LIBRARY}
     ${USD_BOOST_PYTHON}
     ${USD_GF}
     ${USD_SDF}
