@@ -11,6 +11,8 @@
 // IMPORT THIRD-PARTY LIBRARIES
 #include <pxr/base/tf/token.h>
 #include <pxr/usd/kind/registry.h>
+#include <pxr/usd/sdf/assetPath.h>
+#include <pxr/usd/sdf/path.h>
 #include <pxr/usd/sdf/types.h>
 #include <pxr/usd/usd/modelAPI.h>
 #include <pxr/usd/usd/stage.h>
