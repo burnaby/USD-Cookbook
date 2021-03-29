@@ -25,26 +25,36 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
 
-
-  # ASWF docker images based build
-  aswf-build:
+  nvidia-usd-binaries-linux-build:
     strategy:
       matrix:
-        vfx:
-          - 2020
-          - 2021
+        usdVersion:
+          - 20.08
+          - 20.11
+          - 21.02
+        include:
+          - usd_version: 20.08
+            usd_version_url: 20.08
+            python_version: 3.6
     runs-on: ubuntu-18.04
-    container:
-        image: aswf/ci-vfxall:${{ matrix.vfx }}
+    name: 'Ubuntu 18.04 NVIDIA Pre-built Binaries
+      <USD Version=${{ matrix.usd_version }},
+       Python Version=${{ matrix.python_version }}>'
     steps:
+      - name: Install dependencies (Linux)
+        run: sudo apt-get install cmake python${{ matrix.python_version }} python${{ matrix.python_version }}-dev
       - uses: actions/checkout@v2
+      - name: Download and extract pre-built USD binaries
+        run: |
+          curl -L -o /tmp/usd-${{ matrix.usd_version }}.tar.gz https://developer.nvidia.com/usd-${{ matrix.usd_version_url }}-binary-linux-python-${{ matrix.python_version }}
+          mkdir -p /tmp/usd-${{ matrix.usd_version }}
+          tar -C /tmp/usd-${{ matrix.usd_version }} -xvf /tmp/usd-${{ matrix.usd_version }}.tar.gz
       - name: Make the build folder
         run: |
           echo "Now building with tags: ${{ github.event.inputs.tags }}" 
           mkdir build
-
       - name: Now build everything
         run: |
-          cmake ..
+          USD_INSTALL_ROOT=/tmp/usd-${{ matrix.usd_version}} cmake ..
           make          
         working-directory: build
