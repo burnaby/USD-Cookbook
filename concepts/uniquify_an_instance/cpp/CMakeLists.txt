@@ -30,7 +30,7 @@ add_executable(uniquify_an_instance_executable
     main.cpp
 )
 
-set_target_properties(mesh_with_materials_executable PROPERTIES OUTPUT_NAME "run_it")
+set_target_properties(uniquify_an_instance_executable PROPERTIES OUTPUT_NAME "run_it")
 
 target_include_directories(uniquify_an_instance_executable
 PUBLIC
